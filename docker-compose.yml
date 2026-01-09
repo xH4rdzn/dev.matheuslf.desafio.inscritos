@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: postgresdb
+    image: 'postgres:17'
+    environment:
+     - POSTGRES_DB=desafiodb
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_USER=postgres
+    ports:
+      - '5432:5432'
