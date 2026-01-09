@@ -1,4 +1,4 @@
-package dev.matheuslf.desafio.inscritos.entity;
+package dev.matheuslf.desafio.inscritos.domain.enums;
 
 public enum ProjectStatus {
   CREATED,

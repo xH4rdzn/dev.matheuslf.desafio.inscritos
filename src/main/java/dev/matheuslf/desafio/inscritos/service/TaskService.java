@@ -1,18 +1,18 @@
 package dev.matheuslf.desafio.inscritos.service;
 
 import dev.matheuslf.desafio.inscritos.dto.request.TaskRequestDTO;
+import dev.matheuslf.desafio.inscritos.dto.request.TaskUpdateDTO;
 import dev.matheuslf.desafio.inscritos.dto.response.TaskResponseDTO;
-import dev.matheuslf.desafio.inscritos.entity.Task;
-import dev.matheuslf.desafio.inscritos.exceptions.DesafioException;
+import dev.matheuslf.desafio.inscritos.domain.models.Task;
 import dev.matheuslf.desafio.inscritos.exceptions.ProjectNotExistOrNotFound;
 import dev.matheuslf.desafio.inscritos.mapper.TaskMapper;
 import dev.matheuslf.desafio.inscritos.repository.ProjectRepository;
 import dev.matheuslf.desafio.inscritos.repository.TaskRepository;
 import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -43,5 +43,30 @@ public class TaskService {
 
   public List<TaskResponseDTO> findAll() {
     return taskRepository.findAll().stream().map(mapper::toResponse).toList();
+  }
+
+  public Optional<Task> updateTaskStatus(Long id, TaskUpdateDTO dto) {
+    var task = taskRepository.findById(id);
+
+    if (task.isPresent()) {
+      task.get().setStatus(dto.status());
+    }
+
+    taskRepository.save(task.get());
+
+    return task;
+  }
+
+  public boolean deleteById(Long id) {
+
+    var exists = taskRepository.existsById(id);
+
+    if(exists) {
+      taskRepository.deleteById(id);
+      return true;
+    }
+
+    return false;
+
   }
 }

@@ -2,7 +2,7 @@ package dev.matheuslf.desafio.inscritos.service;
 
 import dev.matheuslf.desafio.inscritos.dto.request.ProjectRequestDTO;
 import dev.matheuslf.desafio.inscritos.dto.response.ProjectResponseDTO;
-import dev.matheuslf.desafio.inscritos.entity.Project;
+import dev.matheuslf.desafio.inscritos.domain.models.Project;
 import dev.matheuslf.desafio.inscritos.mapper.ProjectMapper;
 import dev.matheuslf.desafio.inscritos.repository.ProjectRepository;
 import org.springframework.data.domain.Page;

@@ -1,8 +1,8 @@
 package dev.matheuslf.desafio.inscritos.dto.response;
 
 import dev.matheuslf.desafio.inscritos.dto.ProjectSummaryDTO;
-import dev.matheuslf.desafio.inscritos.entity.PriorityTask;
-import dev.matheuslf.desafio.inscritos.entity.TaskStatus;
+import dev.matheuslf.desafio.inscritos.domain.enums.PriorityTask;
+import dev.matheuslf.desafio.inscritos.domain.enums.TaskStatus;
 
 import java.time.LocalDate;
 

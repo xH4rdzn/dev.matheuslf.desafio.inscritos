@@ -1,6 +1,6 @@
 package dev.matheuslf.desafio.inscritos.dto.response;
 
-import dev.matheuslf.desafio.inscritos.entity.ProjectStatus;
+import dev.matheuslf.desafio.inscritos.domain.enums.ProjectStatus;
 
 import java.time.LocalDate;
 

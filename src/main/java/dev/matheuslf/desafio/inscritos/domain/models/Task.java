@@ -1,9 +1,8 @@
-package dev.matheuslf.desafio.inscritos.entity;
+package dev.matheuslf.desafio.inscritos.domain.models;
 
+import dev.matheuslf.desafio.inscritos.domain.enums.PriorityTask;
+import dev.matheuslf.desafio.inscritos.domain.enums.TaskStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
